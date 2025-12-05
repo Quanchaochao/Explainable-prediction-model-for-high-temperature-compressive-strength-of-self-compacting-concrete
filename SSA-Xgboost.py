@@ -195,15 +195,15 @@ def evaluate_model(solution):
 param_grid = {
     "obj_func": evaluate_model,
     "bounds": [
-        FloatVar(lb=3, ub=8),  # max_depth (扩展到3-8)
-        FloatVar(lb=0.01, ub=0.2),  # learning_rate (扩展到0.01-0.2)
-        FloatVar(lb=50, ub=300),  # n_estimators (保持50-300)
-        FloatVar(lb=1, ub=10),  # min_child_weight (扩展到1-10)
-        FloatVar(lb=0, ub=0.5),  # gamma (扩展到0-0.5)
-        FloatVar(lb=0.6, ub=1.0),  # subsample (扩展到0.6-1.0)
-        FloatVar(lb=0.6, ub=1.0),  # colsample_bytree (扩展到0.6-1.0)
-        FloatVar(lb=0.001, ub=1.0),  # reg_alpha (扩展到0.001-1.0)
-        FloatVar(lb=0.1, ub=1.0)  # reg_lambda (保持0.1-1.0)
+        FloatVar(lb=3, ub=8),  
+        FloatVar(lb=0.01, ub=0.2), 
+        FloatVar(lb=50, ub=300),  
+        FloatVar(lb=1, ub=10),  
+        FloatVar(lb=0, ub=0.5), 
+        FloatVar(lb=0.6, ub=1.0),  
+        FloatVar(lb=0.6, ub=1.0), 
+        FloatVar(lb=0.001, ub=1.0), 
+        FloatVar(lb=0.1, ub=1.0)  
     ],
     "minmax": "min"
 }
@@ -327,5 +327,6 @@ with pd.ExcelWriter(output_path, engine='openpyxl', mode='a') as writer:
         'Total_Process_Time_Seconds': [overall_total_time]
     })
     process_time_df.to_excel(writer, sheet_name='Process_Time', index=False)
+
 
 print(f'Save to: {output_path} excel ')
